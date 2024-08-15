@@ -3,9 +3,6 @@ console.log("おはよう～～～～");
 let humanScore = 0;
 let computerScore = 0;
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
 function playRound(humanSelection, computerSelection) {
     console.log(humanSelection);
     console.log(computerSelection);
@@ -20,9 +17,6 @@ function playRound(humanSelection, computerSelection) {
     } else {
         console.log("It's a draw");
     }
-    console.log(`Current Score:
-        Human: ${humanScore}
-        Computer: ${computerScore}`);
 }
 
 function getHumanChoice() {
@@ -70,4 +64,16 @@ function determineWinner(humanSelection, computerSelection) {
         
 }
 
-playRound(humanSelection, computerSelection);
+function playGame(roundNumber) {
+    
+    for (let i = 0; i < roundNumber; i++) {
+        let humanSelection = getHumanChoice();
+        let computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+        console.log(`Current Score:
+            Human: ${humanScore}
+            Computer: ${computerScore}`)
+    }
+}
+
+playGame(5);
