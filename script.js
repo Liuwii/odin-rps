@@ -1,5 +1,8 @@
 console.log("おはよう～～～～");
 
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
     let randomChoice = Math.floor(Math.random()*100) % 3;
     console.log(randomChoice);
